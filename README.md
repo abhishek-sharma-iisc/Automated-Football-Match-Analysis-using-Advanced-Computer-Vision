@@ -2,9 +2,16 @@
 
 
 ## Introduction
-The goal of this project is to detect and track players, referees, and footballs in a video using YOLO, one of the best AI object detection models available. We will also train the model to improve its performance. Additionally, we will assign players to teams based on the colors of their t-shirts using Kmeans for pixel segmentation and clustering. With this information, we can measure a team's ball acquisition percentage in a match. We will also use optical flow to measure camera movement between frames, enabling us to accurately measure a player's movement. Furthermore, we will implement perspective transformation to represent the scene's depth and perspective, allowing us to measure a player's movement in meters rather than pixels. Finally, we will calculate a player's speed and the distance covered. This project covers various concepts and addresses real-world problems, making it suitable for both beginners and experienced machine learning engineers.
+This project employs advanced computer vision techniques like YOLOv8 and OpenCV to identify and track players, referees, and footballs in videos. I have used different techniques in order to process video frame for including various components such as Speed and Distance Travelled for players. <br><br>
+In addition, we also employed K-means clustering for pixel segmentation, enabling us to assign players to their respective teams based on the color of their jerseys. This data will allow us to calculate the percentage of ball possession for each team during a match, providing valuable insights into the game dynamics.<br><br>
+I also incorporated optical flow techniques to measure the movement of the camera between frames, which will facilitate accurate tracking of player movements. To further refine our measurements, we will implement perspective transformation to depict the depth and perspective of the scene. This will allow us to measure player movements in real-world units (meters) instead of pixels, providing a more realistic representation of the game.<br><br>
+Finally, we will compute the speed of each player and the total distance they cover during the match. This comprehensive project encompasses a wide range of concepts and tackles real-world challenges, making it an excellent learning opportunity for both novice and seasoned machine learning engineers. It is a blend of theory and practice, designed to provide a hands-on experience in applying machine learning techniques to solve complex problems.<br><br>
+Here, we will also be fine-tuning YOLO model on [football dataset](https://universe.roboflow.com/roboflow-jvuqo/football-players-detection-3zvbc/dataset/1) before video processing to enhance its performance and ensure precise detection.
 
-![Screenshot](output_videos/screenshot.png)
+
+This project is inspired from a kaggle competition [DFL - Bundesliga Data Shootout](https://www.kaggle.com/competitions/dfl-bundesliga-data-shootout).<br>
+<br>
+![Screenshot](https://github.com/user-attachments/assets/d55bb7db-7a0a-44e5-9ad3-5fcb694eb8ae)
 
 ## Modules Used
 The following modules are used in this project:
