@@ -16,7 +16,7 @@ def main():
     video_frames = read_video('input_videos/game0.mp4')
 
     #download already finetuned model
-    model=hf_hub_download('abhi1304/Automated-Football-Analysis','best.pt')
+    model=hf_hub_download('abhi1304/Automated-Football-Analysis','YOLOv5_pretrained_on_football.pt')
 
     # Initialize Tracker
     tracker = Tracker(model)
