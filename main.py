@@ -2,19 +2,24 @@ from utils import read_video, save_video
 from trackers import Tracker
 import cv2
 import numpy as np
-from team_assigner import TeamAssigner
-from player_ball_assigner import PlayerBallAssigner
-from camera_movement_estimator import CameraMovementEstimator
+from utils import TeamAssigner
+from utils import PlayerBallAssigner
+from utils import CameraMovementEstimator
 from view_transformer import ViewTransformer
-from speed_and_distance_estimator import SpeedAndDistance_Estimator
+from utils import SpeedAndDistance_Estimator
+from huggingface_hub import hf_hub_download
 
 
 def main():
     # Read Video
     # video_frames = read_video('input_videos/08fd33_4.mp4')
     video_frames = read_video('input_videos/game0.mp4')
+
+    #download already finetuned model
+    model=hf_hub_download('abhi1304/Automated-Football-Analysis','best.pt')
+
     # Initialize Tracker
-    tracker = Tracker('models/best.pt')
+    tracker = Tracker(model)
 
     tracks = tracker.get_object_tracks(video_frames,              #simply returns the position coordinates of players, referee and ball 
                                     read_from_stub=False,                 #for each frame in format track["player"][frame_n][track_id]
